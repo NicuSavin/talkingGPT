@@ -1,0 +1,12 @@
+{
+    "name": "TalkingGPT",
+    "version": "1",
+    "description": "",
+    "permissions": ["scripting", "activeTab"],
+    "background":{
+      "service_worker": "background.js"
+    },
+    "host_permissions": ["https://chat.openai.com/chat", "https://chat.openai.com/chat/*"],
+    "manifest_version": 3
+  }
+  
