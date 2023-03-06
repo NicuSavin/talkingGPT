@@ -1,7 +1,8 @@
-**TalkGPT**
+# TalkGPT
+
 TalkGPT is a browser extension that allows the user to have a voice conversation with Chat GPT. It allows for asking and sending messages with your voice, also receiving the answers in oral form as well.
 
-**Installation**
+## Installation
 
 1. Download the extension package from the this GitHub repository.
 2. Extract the package to a folder on your computer.
@@ -10,7 +11,8 @@ TalkGPT is a browser extension that allows the user to have a voice conversation
 5. Click the "Load unpacked" button and select the folder where you extracted the extension package.
 6. The extension should now be installed and ready to use.
 
-**How it works?**
+## How it works?
+
 The extension consists of a small control panel that is added below the question bar of ChatGPT.
 
 It consists of 3 buttons: Mic button, Auto button and Sound button.
@@ -21,5 +23,6 @@ Auto button: This button will turn on auto microphone. In this mode, the microph
 
 Sound button: This button turns on or off the Chat GPT response reading outloud. Turning this on will turn on the verbal capabilities of ChatGPT (reading the responses aloud). Having this off, ChatGPT will not orally respond to your inquiries.
 
-**Limitations**
+## Limitations
+
 The extension currently only supports English language.
