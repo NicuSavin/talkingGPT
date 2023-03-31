@@ -21,7 +21,7 @@ Mic button: This button turns on or off the microphone recording. When it is tur
 
 Auto button: This button will turn on auto microphone. In this mode, the microphone will not shut itself automatically when you stopped saying something, it will permanently keep the microphone on.
 
-Sound button: This button turns on or off the Chat GPT response reading outloud. Turning this on will turn on the verbal capabilities of ChatGPT (reading the responses aloud). Having this off, ChatGPT will not orally respond to your inquiries.
+Sound button: This button turns on or off the Chat GPT response reading outloud. Turning this on will turn on the verbal capabilities of ChatGPT (reading the responses aloud). Having this off, ChatGPT will not orally respond to your inquiries. (*Still in production*)
 
 ## Limitations
 
