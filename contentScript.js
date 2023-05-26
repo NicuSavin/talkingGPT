@@ -1,5 +1,5 @@
 var spokenLanguage = "en-US";
-var sendKeyword = "submit question";
+var sendKeyword = "submit question now";
 
 var autoMic = false;
 
@@ -14,9 +14,18 @@ if (localStorage.getItem("buttonClass") === null) {
       )
   );
 }
-
+//checking and adding menu bar of the extension
 if (!checkBtn()) {
   addBtn();
+}
+//enabling send button
+document.getElementsByTagName(
+  "textarea"
+)[0].parentNode.childNodes[1].disabled = false;
+
+//resizing input box as it does not do it himself
+function autoResizeTextarea(textarea) {
+  textarea.style.height = textarea.scrollHeight + "px"; // Set the height to match the content
 }
 
 function addBtn() {
@@ -102,6 +111,7 @@ function activeMicBtnStyle() {
 }
 
 function resetMicBtnStyle() {
+  speechRecon.stop();
   document.getElementById("mic_btn").style.color = "";
   document.getElementById("mic_btn").style.border = "";
 }
@@ -124,41 +134,40 @@ function record() {
 
     let sendSplit = sendKeyword.split(" ");
     let msgSplit = msg.split(" ");
+    // the send keyword has been said
+    let send = false;
+    //variable that will keep the index of the last word before the send keyword
+    //used for getting rid of the part after the sendind keyword
+    let sendIndex = msgSplit.length;
 
-    //find whether the send keyword has been said
-    let send = true;
-    for (k = 0; k < sendSplit.length; k += 1) {
-      if (msgSplit[msgSplit.length - sendSplit.length + k] !== sendSplit[k]) {
-        send = false;
+    for (k = 0; k < msgSplit.length - sendSplit.length + 1; k += 1) {
+      let keywordSeen = false;
+      msgSplit.slice(k, k + sendSplit.length).forEach((element, index) => {
+        if (element !== sendSplit[index]) {
+          keywordSeen = false;
+          return;
+        }
+        keywordSeen = true;
+      });
+      if (keywordSeen) {
+        send = true;
+        sendIndex = k;
       }
     }
-
+    msgSplit = msgSplit.splice(0, sendIndex);
+    msg = msgSplit.join(" ");
     //insert the message in the question box
-    if (document.getElementsByTagName("textarea")[0].value.length !== 0) {
-      if (send) {
-        document.getElementsByTagName("textarea")[0].value =
-          document.getElementsByTagName("textarea")[0].value +
-          " " +
-          msg.slice(0, msg.length - sendKeyword.length);
-      } else {
-        document.getElementsByTagName("textarea")[0].value =
-          document.getElementsByTagName("textarea")[0].value + " " + msg;
-      }
-    } else {
-      if (send) {
-        document.getElementsByTagName("textarea")[0].value = msg.slice(
-          0,
-          msg.length - sendKeyword.length
-        );
-      } else {
-        document.getElementsByTagName("textarea")[0].value = msg;
-      }
-    }
+    let textBox = document.getElementById("prompt-textarea");
+    document.getElementById("prompt-textarea").value =
+      textBox.value + " " + msg;
+    autoResizeTextarea(textBox);
 
     if (send) {
       document
-        .getElementsByTagName("form")[0]
-        .childNodes[0].childNodes[1].childNodes[1].click();
+        .getElementsByTagName("textarea")[0]
+        .parentNode.childNodes[1].click();
+
+      // .click();
     }
   };
 
