@@ -1,28 +1,32 @@
 # TalkGPT
 
-TalkGPT is a browser extension that allows the user to have a voice conversation with Chat GPT. It allows for asking and sending messages with your voice, also receiving the answers in oral form as well.
+TalkGPT is a browser extension that enables users to engage in voice-based interactions with Chat GPT. It facilitates asking questions and sending messages via voice commands, and also allows for receiving responses audibly.
 
 ## Installation
 
-1. Download the extension package from the this GitHub repository.
-2. Extract the package to a folder on your computer.
-3. Open your browser and navigate to the extensions page.
-4. Enable developer mode if it is not already enabled.
-5. Click the "Load unpacked" button and select the folder where you extracted the extension package.
-6. The extension should now be installed and ready to use.
+To install the TalkGPT extension, follow these steps:
 
-## How it works?
+1. Download the extension package from this GitHub repository.
+2. Extract the package to a preferred location on your computer.
+3. Launch your browser and navigate to the extensions page.
+4. Enable 'Developer Mode' if it isn't already active.
+5. Click on the "Load unpacked" button and navigate to the directory where you extracted the extension package.
+6. Once selected, the extension should be installed and ready for use.
 
-The extension consists of a small control panel that is added below the question bar of ChatGPT.
+## How Does It Work?
 
-It consists of 3 buttons: Mic button, Auto button and Sound button.
+TalkGPT extension introduces a small control panel below the question bar of ChatGPT.
 
-Mic button: This button turns on or off the microphone recording. When it is turned on, its color will turn red and everything you will say will be recorded, converted to text and added in the question bar. Turning it off, will reset to its original color and stop recording. _Using this button will listen until you stop speaking and then automatically turn itself off_
+The control panel includes a 'send keyword' feature; when this keyword or phrase is spoken, your current message will be sent to ChatGPT. Any words spoken after the 'send keyword' will be disregarded.
 
-Auto button: This button will turn on auto microphone. In this mode, the microphone will not shut itself automatically when you stopped saying something, it will permanently keep the microphone on.
+The control panel includes three buttons:
 
-Sound button: This button turns on or off the Chat GPT response reading outloud. Turning this on will turn on the verbal capabilities of ChatGPT (reading the responses aloud). Having this off, ChatGPT will not orally respond to your inquiries. (*Still in production*)
+- **Mic Button:** This button toggles the microphone recording function. When activated, its color changes to red, and your spoken words are transcribed and populated in the question bar. Deactivating the button stops the recording and returns the button to its original color. While this button is activated, it will continue to listen until you stop speaking, at which point it will automatically deactivate itself.
+
+- **Auto Button:** This button activates the auto microphone function. When in 'auto' mode, the microphone will continuously record, regardless of whether you have stopped speaking.
+
+- **Sound Button:** This button controls the auditory response functionality of ChatGPT. When activated, ChatGPT will read responses out loud. When deactivated, ChatGPT will only provide text responses. Please note that this feature is still in development.
 
 ## Limitations
 
-The extension currently only supports English language.
+Please note that the extension currently only supports the English language. Further updates for additional language support may be released in future iterations.
